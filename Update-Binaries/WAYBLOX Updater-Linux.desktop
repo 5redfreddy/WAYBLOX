@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=WAYBLOX Updater
 Comment=Update WAYBLOX silently
-Exec=/home/YOUR_USERNAME/scripts/wayblox-update.sh
+Exec=~/Documents/WAYBLOX/Game/update-linux.sh
 Icon=dialog-information
 Terminal=false
 Type=Application
