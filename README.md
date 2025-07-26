@@ -1,4 +1,4 @@
-# ![WAYBLOX](https://raw.githubusercontent.com/5redfreddy/WAYBLOX/refs/heads/main/Game/content/custom/icons/ModdedIconFULL.png?token=GHSAT0AAAAAADICKWKEBGK7PU7QAQ2QQDS62EFDNWQ)
+# ![WAYBLOX](https://github.com/5redfreddy/WAYBLOX/blob/main/Game/content/custom/icons/ModdedIconFULL.png)
 Repository for WAYBLOX
 
 Welcome to WAYBLOX, A modification of ROPLOX.
