@@ -1,3 +1,3 @@
     #!/bin/bash
     git pull
-    echo "WAYBLOX updated successfully!"
+    zenity --info --title="WAYBLOX" --text="WAYBLOX has successfully been updated or is already up-to-date!"
