@@ -1,4 +1,4 @@
 # WAYBLOX
 Repository for WAYBLOX
 
-Welcome to WAYBLOX, A mod for ROPLOX.
+Welcome to WAYBLOX, A modification of ROPLOX.
