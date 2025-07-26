@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=WAYBLOX Updater
+Comment=Update WAYBLOX silently
+Exec=/home/YOUR_USERNAME/scripts/wayblox-update.sh
+Icon=dialog-information
+Terminal=false
+Type=Application
