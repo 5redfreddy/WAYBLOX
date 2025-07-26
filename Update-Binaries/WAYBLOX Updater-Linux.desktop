@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=WAYBLOX Updater
 Comment=Update WAYBLOX
-Exec=~/Documents/WAYBLOX/Game/update-linux.sh
-Icon=~/Documents/WAYBLOX/Game/content/custom/icons/ModdedIcon.png
+Exec=../DO-NOT-MESS-WITH/update-linux.sh
+Icon=../../Game/content/custom/icons/ModdedIcon.png
 Terminal=false
 Type=Application
