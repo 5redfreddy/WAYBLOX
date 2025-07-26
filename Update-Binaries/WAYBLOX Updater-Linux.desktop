@@ -2,6 +2,6 @@
 Name=WAYBLOX Updater
 Comment=Update WAYBLOX silently
 Exec=~/Documents/WAYBLOX/Game/update-linux.sh
-Icon=dialog-information
+Icon=~/Documents/WAYBLOX/Game/content/custom/icons/ModdedIcon.png
 Terminal=false
 Type=Application
