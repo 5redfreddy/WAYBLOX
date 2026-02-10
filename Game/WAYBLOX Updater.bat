@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 
 REM =========================
-REM WAYBLOX Auto-Updater
+REM WAYBLOX Hard Updater
 REM =========================
 
 set "REPO_URL=https://github.com/5redfreddy/WAYBLOX.git"
@@ -11,17 +11,12 @@ set "FOLDER=WAYBLOX"
 set "FULLPATH=%DOCS%\%FOLDER%"
 
 REM -------------------------
-REM Detect relaunch flag
-REM -------------------------
-if "%~1"=="--continue" goto CONTINUE
-
-REM -------------------------
-REM Check for Git
+REM Ensure Git is installed
 REM -------------------------
 where git >nul 2>&1
 if errorlevel 1 (
     powershell -NoProfile -Command ^
-        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('Git is not installed. WAYBLOX will install Git now (no restart required).','WAYBLOX','OK','Information')"
+        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('Git is not installed. WAYBLOX will install Git now.','WAYBLOX','OK','Information')"
 
     where winget >nul 2>&1 || (
         powershell -NoProfile -Command ^
@@ -29,39 +24,32 @@ if errorlevel 1 (
         exit /b 1
     )
 
-    echo Installing Git with winget...
     winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
 
-    REM Relaunch script in a new shell with updated PATH
-    echo Relaunching updater...
-    start "" "%~f0" --continue
+    REM Relaunch with new PATH
+    start "" "%~f0"
     exit /b
 )
 
-:CONTINUE
 REM -------------------------
-REM Verify Git works
+REM Delete old WAYBLOX
 REM -------------------------
-where git >nul 2>&1 || (
-    powershell -NoProfile -Command ^
-        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('Git installation failed.','WAYBLOX Error','OK','Error')"
-    exit /b 1
+if exist "%FULLPATH%\" (
+    echo Removing old WAYBLOX folder...
+    rmdir /s /q "%FULLPATH%"
 )
 
 REM -------------------------
-REM Clone or Update
+REM Re-download WAYBLOX
 REM -------------------------
 cd /d "%DOCS%" || exit /b 1
+echo Downloading fresh WAYBLOX...
+git clone "%REPO_URL%"
 
-if not exist "%FULLPATH%\" (
-    git clone "%REPO_URL%"
-    powershell -NoProfile -Command ^
-        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('WAYBLOX installed successfully!','WAYBLOX','OK','Information')"
-) else (
-    cd "%FULLPATH%"
-    git pull
-    powershell -NoProfile -Command ^
-        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('WAYBLOX is up to date!','WAYBLOX','OK','Information')"
-)
+REM -------------------------
+REM Done
+REM -------------------------
+powershell -NoProfile -Command ^
+    "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('WAYBLOX has been re-downloaded successfully!','WAYBLOX','OK','Information')"
 
 exit /b 0
