@@ -1,14 +1,19 @@
 @echo off
-setlocal EnableExtensions
+setlocal EnableExtensions EnableDelayedExpansion
 
 REM =========================
-REM WAYBLOX Hard Updater
+REM WAYBLOX Self-Updater
 REM =========================
+
+REM Get script info
+set "SCRIPT_PATH=%~f0"
+set "SCRIPT_DIR=%~dp0"
+set "SCRIPT_NAME=%~nx0"
 
 set "REPO_URL=https://github.com/5redfreddy/WAYBLOX.git"
-set "DOCS=%USERPROFILE%\Documents"
-set "FOLDER=WAYBLOX"
-set "FULLPATH=%DOCS%\%FOLDER%"
+
+REM Normalize path (remove trailing backslash)
+set "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"
 
 REM -------------------------
 REM Ensure Git is installed
@@ -16,7 +21,7 @@ REM -------------------------
 where git >nul 2>&1
 if errorlevel 1 (
     powershell -NoProfile -Command ^
-        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('Git is not installed. WAYBLOX will install Git now.','WAYBLOX','OK','Information')"
+        "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('Git is not installed. Installing Git now.','WAYBLOX','OK','Information')"
 
     where winget >nul 2>&1 || (
         powershell -NoProfile -Command ^
@@ -26,30 +31,38 @@ if errorlevel 1 (
 
     winget install --id Git.Git -e --accept-source-agreements --accept-package-agreements
 
-    REM Relaunch with new PATH
-    start "" "%~f0"
+    REM Relaunch so PATH is refreshed
+    start "" "%SCRIPT_PATH%"
     exit /b
 )
 
 REM -------------------------
-REM Delete old WAYBLOX
+REM Clean script parent folder
 REM -------------------------
-if exist "%FULLPATH%\" (
-    echo Removing old WAYBLOX folder...
-    rmdir /s /q "%FULLPATH%"
+echo Cleaning folder: %SCRIPT_DIR%
+
+for %%F in ("%SCRIPT_DIR%\*") do (
+    if /I not "%%~nxF"=="%SCRIPT_NAME%" (
+        if exist "%%F\" (
+            echo Deleting folder: %%~nxF
+            rmdir /s /q "%%F"
+        ) else (
+            echo Deleting file: %%~nxF
+            del /f /q "%%F"
+        )
+    )
 )
 
 REM -------------------------
-REM Re-download WAYBLOX
+REM Download WAYBLOX here
 REM -------------------------
-cd /d "%DOCS%" || exit /b 1
-echo Downloading fresh WAYBLOX...
-git clone "%REPO_URL%"
+echo Downloading WAYBLOX into script folder...
+git clone "%REPO_URL%" "%SCRIPT_DIR%"
 
 REM -------------------------
 REM Done
 REM -------------------------
 powershell -NoProfile -Command ^
-    "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('WAYBLOX has been re-downloaded successfully!','WAYBLOX','OK','Information')"
+    "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show('WAYBLOX has been refreshed successfully!','WAYBLOX','OK','Information')"
 
 exit /b 0
