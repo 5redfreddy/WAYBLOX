@@ -1,41 +1,81 @@
 @echo off
-setlocal
+setlocal EnableExtensions EnableDelayedExpansion
 
-REM david
+REM =========================
+REM WAYBLOX Auto-Updater
+REM Author: David
+REM =========================
 
-REM git check
+set "REPO_URL=https://github.com/5redfreddy/WAYBLOX.git"
+set "FOLDER=WAYBLOX"
+set "DOCS=%USERPROFILE%\Documents"
+set "FULLPATH=%DOCS%\%FOLDER%"
+set "GIT_INSTALLER=%TEMP%\git-installer.exe"
+set "GIT_URL=https://github.com/git-for-windows/git/releases/latest/download/Git-64-bit.exe"
 
+REM -------------------------
+REM Function: Message Box
+REM -------------------------
+set MSG=powershell -NoProfile -Command "Add-Type -AssemblyName PresentationFramework;[System.Windows.MessageBox]::Show(
+
+REM -------------------------
+REM Check for Git
+REM -------------------------
 git --version >nul 2>&1
 if errorlevel 1 (
-    powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('to be up-to-date with the WAYBLOX repository, please install GIT to proceed! Get GIT at: https://git-scm.com/downloads/win','WAYBLOX error!', 'OK', 'Warning')"
-    exit /b
+    %MSG%'Git is not installed.\n\nWAYBLOX will now download and install Git automatically.','WAYBLOX','OK','Warning')"
+
+    echo Downloading Git...
+    powershell -NoProfile -Command ^
+        "Invoke-WebRequest -Uri '%GIT_URL%' -OutFile '%GIT_INSTALLER%'"
+
+    if not exist "%GIT_INSTALLER%" (
+        %MSG%'Failed to download Git. Please install it manually.','WAYBLOX Error','OK','Error')"
+        exit /b 1
+    )
+
+    echo Installing Git...
+    "%GIT_INSTALLER%" /VERYSILENT /NORESTART
+
+    del "%GIT_INSTALLER%" >nul 2>&1
+
+    REM Refresh PATH
+    set "PATH=%PATH%;C:\Program Files\Git\cmd"
+
+    git --version >nul 2>&1
+    if errorlevel 1 (
+        %MSG%'Git installation failed.\nPlease restart your PC and try again.','WAYBLOX Error','OK','Error')"
+        exit /b 1
+    )
 )
 
-REM Set the git repo url
+REM -------------------------
+REM Change to Documents
+REM -------------------------
+cd /d "%DOCS%" || exit /b 1
 
-set "REPO_URL=https://github.com/5redfreddy/WAYBLOX"
-
-REM get user's documents folder
-
-set "DOCS=%USERPROFILE%\Documents"
-set "FOLDER=WAYBLOX"
-set "FULLPATH=%DOCS%\%FOLDER%"
-
-REM change to documents directory
-cd /d "%DOCS%"
-
-REM check if WAYBLOX folder exists
+REM -------------------------
+REM Clone or Update
+REM -------------------------
 if not exist "%FULLPATH%\" (
-    echo WAYBLOX folder not found. Cloning repository...
-    git clone %REPO_URL%
-  powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('WAYBLOX directory installed! please restart the program for updates and such.','WAYBLOX installed!', 'OK', 'Information')"
-    exit /b
+    echo WAYBLOX not found. Cloning...
+    git clone "%REPO_URL%"
+    if errorlevel 1 (
+        %MSG%'Failed to clone WAYBLOX repository.','WAYBLOX Error','OK','Error')"
+        exit /b 1
+    )
+
+    %MSG%'WAYBLOX has been installed successfully!','WAYBLOX Installed','OK','Information')"
 ) else (
-    echo WAYBLOX folder exists. Pulling latest changes...
-    cd "%FULLPATH%"
+    echo WAYBLOX found. Updating...
+    cd "%FULLPATH%" || exit /b 1
     git pull
-  powershell -Command "Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('WAYBLOX is up-to-date!','WAYBLOX updated!', 'OK', 'Information')"
-    exit /b
+    if errorlevel 1 (
+        %MSG%'Failed to update WAYBLOX repository.','WAYBLOX Error','OK','Error')"
+        exit /b 1
+    )
+
+    %MSG%'WAYBLOX is already up to date!','WAYBLOX Updated','OK','Information')"
 )
 
-pause
+exit /b 0
