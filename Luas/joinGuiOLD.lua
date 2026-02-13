@@ -219,7 +219,7 @@ function createIPbox()
 	local box_name = Instance.new("TextBox", mainFrame)
 	box_name.Font = Enum.Font.SourceSansLight
 	box_name.FontSize = Enum.FontSize.Size18
-	box_name.Text = "5bigbangs"
+	box_name.Text = "Username"
 	box_name.Position = UDim2.new(0.1, 0, 0.75, 0)
 	box_name.Size = UDim2.new(0.8, 0, 0.15, 0)
 	box_name.ClearTextOnFocus = false
@@ -259,4 +259,5 @@ end
 
 pcall(function() settings().Diagnostics:LegacyScriptMode() end)  
 createIPbox()
+
 
