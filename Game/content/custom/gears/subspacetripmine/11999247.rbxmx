@@ -22,7 +22,7 @@
 			<bool name="ManualActivationOnly">false</bool>
 			<string name="Name">SubspaceTripmine</string>
 			<bool name="RequiresHandle">true</bool>
-			<Content name="TextureId"><url>rbxasset://custom/items/subspacetripmine/11987521.png</url></Content>
+			<Content name="TextureId"><url>rbxasset://custom/gears/subspacetripmine/11987521.png</url></Content>
 			<string name="ToolTip"></string>
 		</Properties>
 		<Item class="Part" referent="RBX1">
@@ -38,9 +38,9 @@
 				<token name="BottomSurfaceInput">0</token>
 				<int name="BrickColor">1032</int>
 				<CoordinateFrame name="CFrame">
-					<X>0</X>
-					<Y>35.7881355</Y>
-					<Z>4</Z>
+					<X>1</X>
+					<Y>20.7881355</Y>
+					<Z>0</Z>
 					<R00>1</R00>
 					<R01>0</R01>
 					<R02>0</R02>
@@ -100,7 +100,7 @@
 				<Properties>
 					<token name="LODX">2</token>
 					<token name="LODY">2</token>
-					<Content name="MeshId"><url>rbxasset://custom/items/subspacetripmine/11954776.mesh</url></Content>
+					<Content name="MeshId"><url>rbxasset://custom/gears/subspacetripmine/11954776.mesh</url></Content>
 					<token name="MeshType">5</token>
 					<string name="Name">Mesh</string>
 					<Vector3 name="Offset">
@@ -113,7 +113,7 @@
 						<Y>0.699999988</Y>
 						<Z>0.699999988</Z>
 					</Vector3>
-					<Content name="TextureId"><url>rbxasset://custom/items/subspacetripmine/11954766.png</url></Content>
+					<Content name="TextureId"><url>rbxasset://custom/gears/subspacetripmine/11954766.png</url></Content>
 					<Vector3 name="VertexColor">
 						<X>1</X>
 						<Y>1</Y>
@@ -236,15 +236,15 @@ script.Parent.Activated:connect(onActivated)]]></ProtectedString>
 				<ProtectedString name="Source"><![CDATA[Mine = script.Parent
 
 DunDun = Instance.new("Sound")
-DunDun.SoundId = "rbxasset://custom/items/subspacetripmine/11984254.ogg"
+DunDun.SoundId = "rbxasset://custom/gears/subspacetripmine/11984254.ogg"
 DunDun.Parent = Mine
 
 SubspaceExplosion = Instance.new("Sound")
-SubspaceExplosion.SoundId = "rbxasset://custom/items/subspacetripmine/11984351.ogg"
+SubspaceExplosion.SoundId = "rbxasset://custom/gears/subspacetripmine/11984351.ogg"
 SubspaceExplosion.Parent = Mine
 
 Calibrate = Instance.new("Sound")
-Calibrate.SoundId = "rbxasset://custom/items/subspacetripmine/11956590.ogg"
+Calibrate.SoundId = "rbxasset://custom/gears/subspacetripmine/11956590.ogg"
 Calibrate.Looped = true
 Calibrate.Parent = Mine
 Calibrate:Play()

@@ -22,7 +22,7 @@
 			<bool name="ManualActivationOnly">false</bool>
 			<string name="Name">LinkedSword</string>
 			<bool name="RequiresHandle">true</bool>
-			<Content name="TextureId"><url>rbxasset://custom/items/linkedsword/124987047.png</url></Content>
+			<Content name="TextureId"><url>rbxasset://custom/gears/linkedsword/124987047.png</url></Content>
 			<string name="ToolTip"></string>
 		</Properties>
 		<Item class="Part" referent="RBXC7B4820597614301B75A408424737688">
@@ -38,9 +38,9 @@
 				<token name="BottomSurfaceInput">0</token>
 				<int name="BrickColor">199</int>
 				<CoordinateFrame name="CFrame">
-					<X>0</X>
-					<Y>17</Y>
-					<Z>22</Z>
+					<X>-7</X>
+					<Y>13</Y>
+					<Z>-6</Z>
 					<R00>-0.132099271</R00>
 					<R01>0.914433897</R01>
 					<R02>0.382570893</R02>
@@ -103,7 +103,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/linkedsword/12222208.wav</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/linkedsword/12222208.wav</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.600000024</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -117,7 +117,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/linkedsword/12222216.wav</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/linkedsword/12222216.wav</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.699999988</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -131,7 +131,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/linkedsword/12222225.wav</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/linkedsword/12222225.wav</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">1</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -142,7 +142,7 @@
 				<Properties>
 					<token name="LODX">2</token>
 					<token name="LODY">2</token>
-					<Content name="MeshId"><url>rbxasset://custom/items/linkedsword/12221720.mesh</url></Content>
+					<Content name="MeshId"><url>rbxasset://custom/gears/linkedsword/12221720.mesh</url></Content>
 					<token name="MeshType">5</token>
 					<string name="Name">Mesh</string>
 					<Vector3 name="Offset">
@@ -155,7 +155,7 @@
 						<Y>1</Y>
 						<Z>1</Z>
 					</Vector3>
-					<Content name="TextureId"><url>rbxasset://custom/items/linkedsword/12224218.png</url></Content>
+					<Content name="TextureId"><url>rbxasset://custom/gears/linkedsword/12224218.png</url></Content>
 					<Vector3 name="VertexColor">
 						<X>1</X>
 						<Y>1</Y>

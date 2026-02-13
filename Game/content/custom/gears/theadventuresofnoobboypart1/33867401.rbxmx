@@ -22,7 +22,7 @@
 			<bool name="ManualActivationOnly">false</bool>
 			<string name="Name">2DGame</string>
 			<bool name="RequiresHandle">true</bool>
-			<Content name="TextureId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/33681144.png</url></Content>
+			<Content name="TextureId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/33681144.png</url></Content>
 			<string name="ToolTip"></string>
 		</Properties>
 		<Item class="Part" referent="RBX8353281B55FC487A9F31E79FA58DEC15">
@@ -38,9 +38,9 @@
 				<token name="BottomSurfaceInput">0</token>
 				<int name="BrickColor">194</int>
 				<CoordinateFrame name="CFrame">
-					<X>0.200000003</X>
-					<Y>34.2464561</Y>
-					<Z>3.6464479</Z>
+					<X>2.20000005</X>
+					<Y>18.2464561</Y>
+					<Z>-3.3535521</Z>
 					<R00>1</R00>
 					<R01>1.61447099e-006</R01>
 					<R02>1.41252826e-007</R02>
@@ -100,7 +100,7 @@
 				<Properties>
 					<token name="LODX">2</token>
 					<token name="LODY">2</token>
-					<Content name="MeshId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/33680919.mesh</url></Content>
+					<Content name="MeshId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/33680919.mesh</url></Content>
 					<token name="MeshType">5</token>
 					<string name="Name">Mesh</string>
 					<Vector3 name="Offset">
@@ -113,7 +113,7 @@
 						<Y>1</Y>
 						<Z>1</Z>
 					</Vector3>
-					<Content name="TextureId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/33680946.png</url></Content>
+					<Content name="TextureId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/33680946.png</url></Content>
 					<Vector3 name="VertexColor">
 						<X>1</X>
 						<Y>1</Y>
@@ -128,7 +128,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32200781.ogg</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32200781.ogg</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.5</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -142,7 +142,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32201677.ogg</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32201677.ogg</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.5</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -156,7 +156,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">false</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32201701.ogg</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32201701.ogg</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.5</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -170,7 +170,7 @@
 					<float name="Pitch">1</float>
 					<bool name="PlayOnRemove">false</bool>
 					<bool name="Playing">true</bool>
-					<Content name="SoundId"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32202382.ogg</url></Content>
+					<Content name="SoundId"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32202382.ogg</url></Content>
 					<double name="TimePosition">0</double>
 					<float name="Volume">0.5</float>
 					<float name="xmlRead_MaxDistance">0</float>
@@ -249,9 +249,9 @@ function onEquipped(mouse)
 	clickCon = gui.Cabinet.SoundOnOff.MouseButton1Click:connect(soundChanger)
 
 	if Tool.Handle.Song.Volume == 0 then
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203595.png"
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203595.png"
 	else
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203454.png"
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203454.png"
 	end
 
 	head = Tool.Parent:FindFirstChild("Head")
@@ -308,9 +308,9 @@ function onActivated()
 	gui = Tool.GameGui:clone()
 	clickCon = gui.Cabinet.SoundOnOff.MouseButton1Click:connect(soundChanger)
 	if Tool.Handle.Song.Volume == 0 then
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203595.png"
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203595.png"
 	else
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203454.png"
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203454.png"
 	end
 	player = gui.Cabinet.Screen.Player
 	mapParts = gui.Cabinet.Screen.Map:GetChildren()
@@ -325,14 +325,14 @@ Tool.Activated:connect(onActivated)
 
 function soundChanger()
 
-	if gui.Cabinet.SoundOnOff.Image == "rbxasset://custom/items/theadventuresofnoobboypart1/32203454.png" then
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203595.png"
+	if gui.Cabinet.SoundOnOff.Image == "rbxasset://custom/gears/theadventuresofnoobboypart1/32203454.png" then
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203595.png"
 		Tool.Handle.Song.Volume = 0
 		Tool.Handle.Jump.Volume = 0
 		Tool.Handle.Prize.Volume = 0
 		Tool.Handle.Fail.Volume = 0
 	else
-		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32203454.png"
+		gui.Cabinet.SoundOnOff.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32203454.png"
 		Tool.Handle.Song.Volume = 0.5
 		Tool.Handle.Jump.Volume = 0.5
 		Tool.Handle.Prize.Volume = 0.5
@@ -525,9 +525,9 @@ function walkAnimation(forward)
 	end
 
 	if forward then
-		player.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/" .. playerWalkForward[playIndex]
+		player.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/" .. playerWalkForward[playIndex]
 	else
-		player.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/" .. playerWalkBackward[playIndex]
+		player.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/" .. playerWalkBackward[playIndex]
 	end
 
 end
@@ -542,10 +542,10 @@ function animation()
 		forward = false
 		walkAnimation(forward)
 	elseif forward then
-		player.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/" .. playerWalkForward[1]
+		player.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/" .. playerWalkForward[1]
 		walkCounter = 1
 	else
-		player.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/" .. playerWalkBackward[1]
+		player.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/" .. playerWalkBackward[1]
 		walkCounter = 1
 	end
 
@@ -555,7 +555,7 @@ local left = true
 function spawnEnemy()
 
 	local enemy = Instance.new("ImageLabel")
-	enemy.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32183056.png"
+	enemy.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32183056.png"
 	enemy.Size = UDim2.new(0,16,0,16)
 	enemy.BackgroundTransparency = 1
 	enemy.BorderSizePixel = 0
@@ -613,7 +613,7 @@ function updatePrize()
 		prize = Instance.new("ImageLabel")
 		prize.Name = "Prize"
 		prize.Size = UDim2.new(0,24,0,24)
-		prize.Image = "rbxasset://custom/items/theadventuresofnoobboypart1/32190862.png"
+		prize.Image = "rbxasset://custom/gears/theadventuresofnoobboypart1/32190862.png"
 		prize.BackgroundTransparency = 1
 		prize.BorderSizePixel = 0
 		prize.Parent = gui.Cabinet.Screen
@@ -721,7 +721,7 @@ end
 						<int name="BorderSizePixel">1</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
-						<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/31736392.png</url></Content>
+						<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/31736392.png</url></Content>
 						<Color3 name="ImageColor3">4294967295</Color3>
 						<Vector2 name="ImageRectOffset">
 							<X>0</X>
@@ -823,7 +823,7 @@ end
 					<int name="BorderSizePixel">0</int>
 					<bool name="ClipsDescendants">false</bool>
 					<bool name="Draggable">false</bool>
-					<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32198332.png</url></Content>
+					<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32198332.png</url></Content>
 					<Color3 name="ImageColor3">4294967295</Color3>
 					<Vector2 name="ImageRectOffset">
 						<X>0</X>
@@ -878,7 +878,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
-						<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32195018.png</url></Content>
+						<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32195018.png</url></Content>
 						<Color3 name="ImageColor3">4294967295</Color3>
 						<Vector2 name="ImageRectOffset">
 							<X>0</X>
@@ -933,7 +933,7 @@ end
 							<int name="BorderSizePixel">0</int>
 							<bool name="ClipsDescendants">false</bool>
 							<bool name="Draggable">false</bool>
-							<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32168430.png</url></Content>
+							<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32168430.png</url></Content>
 							<Color3 name="ImageColor3">4294967295</Color3>
 							<Vector2 name="ImageRectOffset">
 								<X>0</X>
@@ -1023,7 +1023,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1079,7 +1079,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1135,7 +1135,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1191,7 +1191,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1247,7 +1247,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1303,7 +1303,7 @@ end
 								<int name="BorderSizePixel">0</int>
 								<bool name="ClipsDescendants">false</bool>
 								<bool name="Draggable">false</bool>
-								<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32197031.png</url></Content>
+								<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32197031.png</url></Content>
 								<Color3 name="ImageColor3">4294967295</Color3>
 								<Vector2 name="ImageRectOffset">
 									<X>0</X>
@@ -1397,7 +1397,7 @@ end
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
-						<Content name="Image"><url>rbxasset://custom/items/theadventuresofnoobboypart1/32203454.png</url></Content>
+						<Content name="Image"><url>rbxasset://custom/gears/theadventuresofnoobboypart1/32203454.png</url></Content>
 						<Color3 name="ImageColor3">4294967295</Color3>
 						<Vector2 name="ImageRectOffset">
 							<X>0</X>
